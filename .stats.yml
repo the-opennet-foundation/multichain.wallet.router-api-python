@@ -1,0 +1,4 @@
+configured_endpoints: 103
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/chainflow%2Fmultichain.wallet.router-api-6e4e0b9ab7bc8468ac008140c2f871516dc3b7d330a071e99ab2ff5e77a7e52e.yml
+openapi_spec_hash: d4810b5751c31a2257a45b7302448ffe
+config_hash: f3667cbaf11839e325b207a52fbf50b3
