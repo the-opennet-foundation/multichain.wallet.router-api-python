@@ -1,7 +1,7 @@
 # Multichain Wallet Router API Python API library
 
 <!-- prettier-ignore -->
-[![PyPI version](https://img.shields.io/pypi/v/multichain.wallet.router_api.svg?label=pypi%20(stable))](https://pypi.org/project/multichain.wallet.router_api/)
+[![PyPI version](https://img.shields.io/pypi/v/multichain-wallet-router-api.svg?label=pypi%20(stable))](https://pypi.org/project/multichain-wallet-router-api/)
 
 The Multichain Wallet Router API Python library provides convenient access to the Multichain Wallet Router API REST API from any Python 3.9+
 application. The library includes type definitions for all request params and response fields,
@@ -17,7 +17,7 @@ The full API of this library can be found in [api.md](api.md).
 
 ```sh
 # install from PyPI
-pip install multichain.wallet.router_api
+pip install multichain-wallet-router-api
 ```
 
 ## Usage
@@ -77,7 +77,7 @@ You can enable this by installing `aiohttp`:
 
 ```sh
 # install from PyPI
-pip install multichain.wallet.router_api[aiohttp]
+pip install multichain-wallet-router-api[aiohttp]
 ```
 
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
