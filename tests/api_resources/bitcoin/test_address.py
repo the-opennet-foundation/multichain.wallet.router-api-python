@@ -15,7 +15,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestAddress:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_info(self, client: MultichainWalletRouterAPI) -> None:
         address = client.bitcoin.address.get_info(
@@ -23,7 +23,7 @@ class TestAddress:
         )
         assert address is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_info(self, client: MultichainWalletRouterAPI) -> None:
         response = client.bitcoin.address.with_raw_response.get_info(
@@ -35,7 +35,7 @@ class TestAddress:
         address = response.parse()
         assert address is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_info(self, client: MultichainWalletRouterAPI) -> None:
         with client.bitcoin.address.with_streaming_response.get_info(
@@ -49,7 +49,7 @@ class TestAddress:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_info(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `address` but received ''"):
@@ -57,7 +57,7 @@ class TestAddress:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_utxos(self, client: MultichainWalletRouterAPI) -> None:
         address = client.bitcoin.address.get_utxos(
@@ -65,7 +65,7 @@ class TestAddress:
         )
         assert address is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_utxos(self, client: MultichainWalletRouterAPI) -> None:
         response = client.bitcoin.address.with_raw_response.get_utxos(
@@ -77,7 +77,7 @@ class TestAddress:
         address = response.parse()
         assert address is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_utxos(self, client: MultichainWalletRouterAPI) -> None:
         with client.bitcoin.address.with_streaming_response.get_utxos(
@@ -91,7 +91,7 @@ class TestAddress:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_utxos(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `address` but received ''"):
@@ -105,7 +105,7 @@ class TestAsyncAddress:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_info(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         address = await async_client.bitcoin.address.get_info(
@@ -113,7 +113,7 @@ class TestAsyncAddress:
         )
         assert address is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_info(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.bitcoin.address.with_raw_response.get_info(
@@ -125,7 +125,7 @@ class TestAsyncAddress:
         address = await response.parse()
         assert address is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_info(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.bitcoin.address.with_streaming_response.get_info(
@@ -139,7 +139,7 @@ class TestAsyncAddress:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_info(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `address` but received ''"):
@@ -147,7 +147,7 @@ class TestAsyncAddress:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_utxos(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         address = await async_client.bitcoin.address.get_utxos(
@@ -155,7 +155,7 @@ class TestAsyncAddress:
         )
         assert address is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_utxos(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.bitcoin.address.with_raw_response.get_utxos(
@@ -167,7 +167,7 @@ class TestAsyncAddress:
         address = await response.parse()
         assert address is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_utxos(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.bitcoin.address.with_streaming_response.get_utxos(
@@ -181,7 +181,7 @@ class TestAsyncAddress:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_utxos(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `address` but received ''"):

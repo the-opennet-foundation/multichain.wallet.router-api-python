@@ -15,13 +15,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestFees:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_estimate(self, client: MultichainWalletRouterAPI) -> None:
         fee = client.bitcoin.fees.estimate()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_estimate_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         fee = client.bitcoin.fees.estimate(
@@ -30,7 +30,7 @@ class TestFees:
         )
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_estimate(self, client: MultichainWalletRouterAPI) -> None:
         response = client.bitcoin.fees.with_raw_response.estimate()
@@ -40,7 +40,7 @@ class TestFees:
         fee = response.parse()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_estimate(self, client: MultichainWalletRouterAPI) -> None:
         with client.bitcoin.fees.with_streaming_response.estimate() as response:
@@ -52,13 +52,13 @@ class TestFees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_recommended(self, client: MultichainWalletRouterAPI) -> None:
         fee = client.bitcoin.fees.get_recommended()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_recommended(self, client: MultichainWalletRouterAPI) -> None:
         response = client.bitcoin.fees.with_raw_response.get_recommended()
@@ -68,7 +68,7 @@ class TestFees:
         fee = response.parse()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_recommended(self, client: MultichainWalletRouterAPI) -> None:
         with client.bitcoin.fees.with_streaming_response.get_recommended() as response:
@@ -86,13 +86,13 @@ class TestAsyncFees:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_estimate(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         fee = await async_client.bitcoin.fees.estimate()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_estimate_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         fee = await async_client.bitcoin.fees.estimate(
@@ -101,7 +101,7 @@ class TestAsyncFees:
         )
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_estimate(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.bitcoin.fees.with_raw_response.estimate()
@@ -111,7 +111,7 @@ class TestAsyncFees:
         fee = await response.parse()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_estimate(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.bitcoin.fees.with_streaming_response.estimate() as response:
@@ -123,13 +123,13 @@ class TestAsyncFees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_recommended(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         fee = await async_client.bitcoin.fees.get_recommended()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_recommended(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.bitcoin.fees.with_raw_response.get_recommended()
@@ -139,7 +139,7 @@ class TestAsyncFees:
         fee = await response.parse()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_recommended(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.bitcoin.fees.with_streaming_response.get_recommended() as response:

@@ -15,13 +15,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestWallet:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_chains(self, client: MultichainWalletRouterAPI) -> None:
         wallet = client.wallet.list_chains()
         assert wallet is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list_chains(self, client: MultichainWalletRouterAPI) -> None:
         response = client.wallet.with_raw_response.list_chains()
@@ -31,7 +31,7 @@ class TestWallet:
         wallet = response.parse()
         assert wallet is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list_chains(self, client: MultichainWalletRouterAPI) -> None:
         with client.wallet.with_streaming_response.list_chains() as response:
@@ -43,7 +43,7 @@ class TestWallet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_chain(self, client: MultichainWalletRouterAPI) -> None:
         wallet = client.wallet.retrieve_chain(
@@ -51,7 +51,7 @@ class TestWallet:
         )
         assert wallet is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_chain(self, client: MultichainWalletRouterAPI) -> None:
         response = client.wallet.with_raw_response.retrieve_chain(
@@ -63,7 +63,7 @@ class TestWallet:
         wallet = response.parse()
         assert wallet is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_chain(self, client: MultichainWalletRouterAPI) -> None:
         with client.wallet.with_streaming_response.retrieve_chain(
@@ -83,13 +83,13 @@ class TestAsyncWallet:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_chains(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         wallet = await async_client.wallet.list_chains()
         assert wallet is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list_chains(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.wallet.with_raw_response.list_chains()
@@ -99,7 +99,7 @@ class TestAsyncWallet:
         wallet = await response.parse()
         assert wallet is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list_chains(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.wallet.with_streaming_response.list_chains() as response:
@@ -111,7 +111,7 @@ class TestAsyncWallet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_chain(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         wallet = await async_client.wallet.retrieve_chain(
@@ -119,7 +119,7 @@ class TestAsyncWallet:
         )
         assert wallet is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_chain(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.wallet.with_raw_response.retrieve_chain(
@@ -131,7 +131,7 @@ class TestAsyncWallet:
         wallet = await response.parse()
         assert wallet is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_chain(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.wallet.with_streaming_response.retrieve_chain(

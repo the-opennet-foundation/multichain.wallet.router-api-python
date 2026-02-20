@@ -15,7 +15,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestJupiter:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_price(self, client: MultichainWalletRouterAPI) -> None:
         jupiter = client.solana.jupiter.get_price(
@@ -23,7 +23,7 @@ class TestJupiter:
         )
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_price(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.jupiter.with_raw_response.get_price(
@@ -35,7 +35,7 @@ class TestJupiter:
         jupiter = response.parse()
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_price(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.jupiter.with_streaming_response.get_price(
@@ -49,7 +49,7 @@ class TestJupiter:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_quote(self, client: MultichainWalletRouterAPI) -> None:
         jupiter = client.solana.jupiter.get_quote(
@@ -59,7 +59,7 @@ class TestJupiter:
         )
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_quote_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         jupiter = client.solana.jupiter.get_quote(
@@ -70,7 +70,7 @@ class TestJupiter:
         )
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_quote(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.jupiter.with_raw_response.get_quote(
@@ -84,7 +84,7 @@ class TestJupiter:
         jupiter = response.parse()
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_quote(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.jupiter.with_streaming_response.get_quote(
@@ -100,13 +100,13 @@ class TestJupiter:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_tokens(self, client: MultichainWalletRouterAPI) -> None:
         jupiter = client.solana.jupiter.get_tokens()
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_tokens(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.jupiter.with_raw_response.get_tokens()
@@ -116,7 +116,7 @@ class TestJupiter:
         jupiter = response.parse()
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_tokens(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.jupiter.with_streaming_response.get_tokens() as response:
@@ -128,7 +128,7 @@ class TestJupiter:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_swap(self, client: MultichainWalletRouterAPI) -> None:
         jupiter = client.solana.jupiter.swap(
@@ -137,7 +137,7 @@ class TestJupiter:
         )
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_swap(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.jupiter.with_raw_response.swap(
@@ -150,7 +150,7 @@ class TestJupiter:
         jupiter = response.parse()
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_swap(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.jupiter.with_streaming_response.swap(
@@ -171,7 +171,7 @@ class TestAsyncJupiter:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_price(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         jupiter = await async_client.solana.jupiter.get_price(
@@ -179,7 +179,7 @@ class TestAsyncJupiter:
         )
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_price(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.jupiter.with_raw_response.get_price(
@@ -191,7 +191,7 @@ class TestAsyncJupiter:
         jupiter = await response.parse()
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_price(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.jupiter.with_streaming_response.get_price(
@@ -205,7 +205,7 @@ class TestAsyncJupiter:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_quote(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         jupiter = await async_client.solana.jupiter.get_quote(
@@ -215,7 +215,7 @@ class TestAsyncJupiter:
         )
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_quote_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         jupiter = await async_client.solana.jupiter.get_quote(
@@ -226,7 +226,7 @@ class TestAsyncJupiter:
         )
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_quote(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.jupiter.with_raw_response.get_quote(
@@ -240,7 +240,7 @@ class TestAsyncJupiter:
         jupiter = await response.parse()
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_quote(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.jupiter.with_streaming_response.get_quote(
@@ -256,13 +256,13 @@ class TestAsyncJupiter:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_tokens(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         jupiter = await async_client.solana.jupiter.get_tokens()
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_tokens(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.jupiter.with_raw_response.get_tokens()
@@ -272,7 +272,7 @@ class TestAsyncJupiter:
         jupiter = await response.parse()
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_tokens(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.jupiter.with_streaming_response.get_tokens() as response:
@@ -284,7 +284,7 @@ class TestAsyncJupiter:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_swap(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         jupiter = await async_client.solana.jupiter.swap(
@@ -293,7 +293,7 @@ class TestAsyncJupiter:
         )
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_swap(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.jupiter.with_raw_response.swap(
@@ -306,7 +306,7 @@ class TestAsyncJupiter:
         jupiter = await response.parse()
         assert jupiter is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_swap(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.jupiter.with_streaming_response.swap(
