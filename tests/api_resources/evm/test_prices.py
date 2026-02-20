@@ -15,7 +15,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestPrices:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_by_address(self, client: MultichainWalletRouterAPI) -> None:
         price = client.evm.prices.get_by_address(
@@ -23,7 +23,7 @@ class TestPrices:
         )
         assert price is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_by_address_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         price = client.evm.prices.get_by_address(
@@ -32,7 +32,7 @@ class TestPrices:
         )
         assert price is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_by_address(self, client: MultichainWalletRouterAPI) -> None:
         response = client.evm.prices.with_raw_response.get_by_address(
@@ -44,7 +44,7 @@ class TestPrices:
         price = response.parse()
         assert price is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_by_address(self, client: MultichainWalletRouterAPI) -> None:
         with client.evm.prices.with_streaming_response.get_by_address(
@@ -58,13 +58,13 @@ class TestPrices:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_by_symbol(self, client: MultichainWalletRouterAPI) -> None:
         price = client.evm.prices.get_by_symbol()
         assert price is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_by_symbol_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         price = client.evm.prices.get_by_symbol(
@@ -72,7 +72,7 @@ class TestPrices:
         )
         assert price is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_by_symbol(self, client: MultichainWalletRouterAPI) -> None:
         response = client.evm.prices.with_raw_response.get_by_symbol()
@@ -82,7 +82,7 @@ class TestPrices:
         price = response.parse()
         assert price is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_by_symbol(self, client: MultichainWalletRouterAPI) -> None:
         with client.evm.prices.with_streaming_response.get_by_symbol() as response:
@@ -100,7 +100,7 @@ class TestAsyncPrices:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_by_address(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         price = await async_client.evm.prices.get_by_address(
@@ -108,7 +108,7 @@ class TestAsyncPrices:
         )
         assert price is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_by_address_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         price = await async_client.evm.prices.get_by_address(
@@ -117,7 +117,7 @@ class TestAsyncPrices:
         )
         assert price is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_by_address(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.evm.prices.with_raw_response.get_by_address(
@@ -129,7 +129,7 @@ class TestAsyncPrices:
         price = await response.parse()
         assert price is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_by_address(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.evm.prices.with_streaming_response.get_by_address(
@@ -143,13 +143,13 @@ class TestAsyncPrices:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_by_symbol(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         price = await async_client.evm.prices.get_by_symbol()
         assert price is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_by_symbol_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         price = await async_client.evm.prices.get_by_symbol(
@@ -157,7 +157,7 @@ class TestAsyncPrices:
         )
         assert price is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_by_symbol(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.evm.prices.with_raw_response.get_by_symbol()
@@ -167,7 +167,7 @@ class TestAsyncPrices:
         price = await response.parse()
         assert price is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_by_symbol(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.evm.prices.with_streaming_response.get_by_symbol() as response:

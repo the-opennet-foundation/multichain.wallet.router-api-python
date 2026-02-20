@@ -15,7 +15,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestToken:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_allowance(self, client: MultichainWalletRouterAPI) -> None:
         token = client.evm.token.get_allowance(
@@ -26,7 +26,7 @@ class TestToken:
         )
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_allowance(self, client: MultichainWalletRouterAPI) -> None:
         response = client.evm.token.with_raw_response.get_allowance(
@@ -41,7 +41,7 @@ class TestToken:
         token = response.parse()
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_allowance(self, client: MultichainWalletRouterAPI) -> None:
         with client.evm.token.with_streaming_response.get_allowance(
@@ -58,7 +58,7 @@ class TestToken:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_allowance(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `token_address` but received ''"):
@@ -69,7 +69,7 @@ class TestToken:
                 spender="spender",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_metadata(self, client: MultichainWalletRouterAPI) -> None:
         token = client.evm.token.get_metadata(
@@ -78,7 +78,7 @@ class TestToken:
         )
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_metadata(self, client: MultichainWalletRouterAPI) -> None:
         response = client.evm.token.with_raw_response.get_metadata(
@@ -91,7 +91,7 @@ class TestToken:
         token = response.parse()
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_metadata(self, client: MultichainWalletRouterAPI) -> None:
         with client.evm.token.with_streaming_response.get_metadata(
@@ -106,7 +106,7 @@ class TestToken:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_metadata(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `token_address` but received ''"):
@@ -121,7 +121,7 @@ class TestAsyncToken:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_allowance(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         token = await async_client.evm.token.get_allowance(
@@ -132,7 +132,7 @@ class TestAsyncToken:
         )
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_allowance(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.evm.token.with_raw_response.get_allowance(
@@ -147,7 +147,7 @@ class TestAsyncToken:
         token = await response.parse()
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_allowance(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.evm.token.with_streaming_response.get_allowance(
@@ -164,7 +164,7 @@ class TestAsyncToken:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_allowance(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `token_address` but received ''"):
@@ -175,7 +175,7 @@ class TestAsyncToken:
                 spender="spender",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_metadata(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         token = await async_client.evm.token.get_metadata(
@@ -184,7 +184,7 @@ class TestAsyncToken:
         )
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_metadata(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.evm.token.with_raw_response.get_metadata(
@@ -197,7 +197,7 @@ class TestAsyncToken:
         token = await response.parse()
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_metadata(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.evm.token.with_streaming_response.get_metadata(
@@ -212,7 +212,7 @@ class TestAsyncToken:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_metadata(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `token_address` but received ''"):

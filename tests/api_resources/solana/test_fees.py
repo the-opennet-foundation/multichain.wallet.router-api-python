@@ -15,13 +15,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestFees:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_priority(self, client: MultichainWalletRouterAPI) -> None:
         fee = client.solana.fees.get_priority()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_priority_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         fee = client.solana.fees.get_priority(
@@ -29,7 +29,7 @@ class TestFees:
         )
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_priority(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.fees.with_raw_response.get_priority()
@@ -39,7 +39,7 @@ class TestFees:
         fee = response.parse()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_priority(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.fees.with_streaming_response.get_priority() as response:
@@ -51,13 +51,13 @@ class TestFees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_recent(self, client: MultichainWalletRouterAPI) -> None:
         fee = client.solana.fees.get_recent()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_recent_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         fee = client.solana.fees.get_recent(
@@ -65,7 +65,7 @@ class TestFees:
         )
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_recent(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.fees.with_raw_response.get_recent()
@@ -75,7 +75,7 @@ class TestFees:
         fee = response.parse()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_recent(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.fees.with_streaming_response.get_recent() as response:
@@ -93,13 +93,13 @@ class TestAsyncFees:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_priority(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         fee = await async_client.solana.fees.get_priority()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_priority_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         fee = await async_client.solana.fees.get_priority(
@@ -107,7 +107,7 @@ class TestAsyncFees:
         )
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_priority(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.fees.with_raw_response.get_priority()
@@ -117,7 +117,7 @@ class TestAsyncFees:
         fee = await response.parse()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_priority(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.fees.with_streaming_response.get_priority() as response:
@@ -129,13 +129,13 @@ class TestAsyncFees:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_recent(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         fee = await async_client.solana.fees.get_recent()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_recent_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         fee = await async_client.solana.fees.get_recent(
@@ -143,7 +143,7 @@ class TestAsyncFees:
         )
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_recent(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.fees.with_raw_response.get_recent()
@@ -153,7 +153,7 @@ class TestAsyncFees:
         fee = await response.parse()
         assert fee is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_recent(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.fees.with_streaming_response.get_recent() as response:

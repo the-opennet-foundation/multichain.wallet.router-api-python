@@ -15,7 +15,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestGas:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_estimate(self, client: MultichainWalletRouterAPI) -> None:
         gas = client.evm.gas.estimate(
@@ -23,7 +23,7 @@ class TestGas:
         )
         assert gas is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_estimate_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         gas = client.evm.gas.estimate(
@@ -32,7 +32,7 @@ class TestGas:
         )
         assert gas is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_estimate(self, client: MultichainWalletRouterAPI) -> None:
         response = client.evm.gas.with_raw_response.estimate(
@@ -44,7 +44,7 @@ class TestGas:
         gas = response.parse()
         assert gas is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_estimate(self, client: MultichainWalletRouterAPI) -> None:
         with client.evm.gas.with_streaming_response.estimate(
@@ -58,7 +58,7 @@ class TestGas:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_price(self, client: MultichainWalletRouterAPI) -> None:
         gas = client.evm.gas.get_price(
@@ -66,7 +66,7 @@ class TestGas:
         )
         assert gas is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_price(self, client: MultichainWalletRouterAPI) -> None:
         response = client.evm.gas.with_raw_response.get_price(
@@ -78,7 +78,7 @@ class TestGas:
         gas = response.parse()
         assert gas is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_price(self, client: MultichainWalletRouterAPI) -> None:
         with client.evm.gas.with_streaming_response.get_price(
@@ -98,7 +98,7 @@ class TestAsyncGas:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_estimate(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         gas = await async_client.evm.gas.estimate(
@@ -106,7 +106,7 @@ class TestAsyncGas:
         )
         assert gas is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_estimate_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         gas = await async_client.evm.gas.estimate(
@@ -115,7 +115,7 @@ class TestAsyncGas:
         )
         assert gas is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_estimate(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.evm.gas.with_raw_response.estimate(
@@ -127,7 +127,7 @@ class TestAsyncGas:
         gas = await response.parse()
         assert gas is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_estimate(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.evm.gas.with_streaming_response.estimate(
@@ -141,7 +141,7 @@ class TestAsyncGas:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_price(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         gas = await async_client.evm.gas.get_price(
@@ -149,7 +149,7 @@ class TestAsyncGas:
         )
         assert gas is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_price(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.evm.gas.with_raw_response.get_price(
@@ -161,7 +161,7 @@ class TestAsyncGas:
         gas = await response.parse()
         assert gas is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_price(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.evm.gas.with_streaming_response.get_price(

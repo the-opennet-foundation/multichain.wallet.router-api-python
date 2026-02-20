@@ -15,13 +15,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestInflation:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_rate(self, client: MultichainWalletRouterAPI) -> None:
         inflation = client.solana.inflation.get_rate()
         assert inflation is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_rate(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.inflation.with_raw_response.get_rate()
@@ -31,7 +31,7 @@ class TestInflation:
         inflation = response.parse()
         assert inflation is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_rate(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.inflation.with_streaming_response.get_rate() as response:
@@ -43,7 +43,7 @@ class TestInflation:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_rewards(self, client: MultichainWalletRouterAPI) -> None:
         inflation = client.solana.inflation.get_rewards(
@@ -51,7 +51,7 @@ class TestInflation:
         )
         assert inflation is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_rewards_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         inflation = client.solana.inflation.get_rewards(
@@ -60,7 +60,7 @@ class TestInflation:
         )
         assert inflation is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_rewards(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.inflation.with_raw_response.get_rewards(
@@ -72,7 +72,7 @@ class TestInflation:
         inflation = response.parse()
         assert inflation is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_rewards(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.inflation.with_streaming_response.get_rewards(
@@ -92,13 +92,13 @@ class TestAsyncInflation:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_rate(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         inflation = await async_client.solana.inflation.get_rate()
         assert inflation is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_rate(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.inflation.with_raw_response.get_rate()
@@ -108,7 +108,7 @@ class TestAsyncInflation:
         inflation = await response.parse()
         assert inflation is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_rate(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.inflation.with_streaming_response.get_rate() as response:
@@ -120,7 +120,7 @@ class TestAsyncInflation:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_rewards(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         inflation = await async_client.solana.inflation.get_rewards(
@@ -128,7 +128,7 @@ class TestAsyncInflation:
         )
         assert inflation is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_rewards_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         inflation = await async_client.solana.inflation.get_rewards(
@@ -137,7 +137,7 @@ class TestAsyncInflation:
         )
         assert inflation is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_rewards(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.inflation.with_raw_response.get_rewards(
@@ -149,7 +149,7 @@ class TestAsyncInflation:
         inflation = await response.parse()
         assert inflation is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_rewards(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.inflation.with_streaming_response.get_rewards(

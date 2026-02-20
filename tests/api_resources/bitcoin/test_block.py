@@ -15,13 +15,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestBlock:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_best(self, client: MultichainWalletRouterAPI) -> None:
         block = client.bitcoin.block.get_best()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_best(self, client: MultichainWalletRouterAPI) -> None:
         response = client.bitcoin.block.with_raw_response.get_best()
@@ -31,7 +31,7 @@ class TestBlock:
         block = response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_best(self, client: MultichainWalletRouterAPI) -> None:
         with client.bitcoin.block.with_streaming_response.get_best() as response:
@@ -43,7 +43,7 @@ class TestBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_by_hash(self, client: MultichainWalletRouterAPI) -> None:
         block = client.bitcoin.block.get_by_hash(
@@ -51,7 +51,7 @@ class TestBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_by_hash_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         block = client.bitcoin.block.get_by_hash(
@@ -60,7 +60,7 @@ class TestBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_by_hash(self, client: MultichainWalletRouterAPI) -> None:
         response = client.bitcoin.block.with_raw_response.get_by_hash(
@@ -72,7 +72,7 @@ class TestBlock:
         block = response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_by_hash(self, client: MultichainWalletRouterAPI) -> None:
         with client.bitcoin.block.with_streaming_response.get_by_hash(
@@ -86,7 +86,7 @@ class TestBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_by_hash(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `hash` but received ''"):
@@ -94,7 +94,7 @@ class TestBlock:
                 hash="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_by_height(self, client: MultichainWalletRouterAPI) -> None:
         block = client.bitcoin.block.get_by_height(
@@ -102,7 +102,7 @@ class TestBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_by_height(self, client: MultichainWalletRouterAPI) -> None:
         response = client.bitcoin.block.with_raw_response.get_by_height(
@@ -114,7 +114,7 @@ class TestBlock:
         block = response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_by_height(self, client: MultichainWalletRouterAPI) -> None:
         with client.bitcoin.block.with_streaming_response.get_by_height(
@@ -128,7 +128,7 @@ class TestBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_header(self, client: MultichainWalletRouterAPI) -> None:
         block = client.bitcoin.block.get_header(
@@ -136,7 +136,7 @@ class TestBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_header_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         block = client.bitcoin.block.get_header(
@@ -145,7 +145,7 @@ class TestBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_header(self, client: MultichainWalletRouterAPI) -> None:
         response = client.bitcoin.block.with_raw_response.get_header(
@@ -157,7 +157,7 @@ class TestBlock:
         block = response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_header(self, client: MultichainWalletRouterAPI) -> None:
         with client.bitcoin.block.with_streaming_response.get_header(
@@ -171,7 +171,7 @@ class TestBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_header(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `hash` but received ''"):
@@ -179,7 +179,7 @@ class TestBlock:
                 hash="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_stats(self, client: MultichainWalletRouterAPI) -> None:
         block = client.bitcoin.block.get_stats(
@@ -187,7 +187,7 @@ class TestBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_stats(self, client: MultichainWalletRouterAPI) -> None:
         response = client.bitcoin.block.with_raw_response.get_stats(
@@ -199,7 +199,7 @@ class TestBlock:
         block = response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_stats(self, client: MultichainWalletRouterAPI) -> None:
         with client.bitcoin.block.with_streaming_response.get_stats(
@@ -213,7 +213,7 @@ class TestBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_stats(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `hash` but received ''"):
@@ -221,13 +221,13 @@ class TestBlock:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_tip(self, client: MultichainWalletRouterAPI) -> None:
         block = client.bitcoin.block.get_tip()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_tip(self, client: MultichainWalletRouterAPI) -> None:
         response = client.bitcoin.block.with_raw_response.get_tip()
@@ -237,7 +237,7 @@ class TestBlock:
         block = response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_tip(self, client: MultichainWalletRouterAPI) -> None:
         with client.bitcoin.block.with_streaming_response.get_tip() as response:
@@ -249,7 +249,7 @@ class TestBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_transaction_ids(self, client: MultichainWalletRouterAPI) -> None:
         block = client.bitcoin.block.get_transaction_ids(
@@ -257,7 +257,7 @@ class TestBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_transaction_ids(self, client: MultichainWalletRouterAPI) -> None:
         response = client.bitcoin.block.with_raw_response.get_transaction_ids(
@@ -269,7 +269,7 @@ class TestBlock:
         block = response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_transaction_ids(self, client: MultichainWalletRouterAPI) -> None:
         with client.bitcoin.block.with_streaming_response.get_transaction_ids(
@@ -283,7 +283,7 @@ class TestBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_transaction_ids(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `hash` but received ''"):
@@ -291,7 +291,7 @@ class TestBlock:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_transactions(self, client: MultichainWalletRouterAPI) -> None:
         block = client.bitcoin.block.get_transactions(
@@ -299,7 +299,7 @@ class TestBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_transactions_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         block = client.bitcoin.block.get_transactions(
@@ -308,7 +308,7 @@ class TestBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_transactions(self, client: MultichainWalletRouterAPI) -> None:
         response = client.bitcoin.block.with_raw_response.get_transactions(
@@ -320,7 +320,7 @@ class TestBlock:
         block = response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_transactions(self, client: MultichainWalletRouterAPI) -> None:
         with client.bitcoin.block.with_streaming_response.get_transactions(
@@ -334,7 +334,7 @@ class TestBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_transactions(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `hash` but received ''"):
@@ -348,13 +348,13 @@ class TestAsyncBlock:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_best(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         block = await async_client.bitcoin.block.get_best()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_best(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.bitcoin.block.with_raw_response.get_best()
@@ -364,7 +364,7 @@ class TestAsyncBlock:
         block = await response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_best(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.bitcoin.block.with_streaming_response.get_best() as response:
@@ -376,7 +376,7 @@ class TestAsyncBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_by_hash(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         block = await async_client.bitcoin.block.get_by_hash(
@@ -384,7 +384,7 @@ class TestAsyncBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_by_hash_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         block = await async_client.bitcoin.block.get_by_hash(
@@ -393,7 +393,7 @@ class TestAsyncBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_by_hash(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.bitcoin.block.with_raw_response.get_by_hash(
@@ -405,7 +405,7 @@ class TestAsyncBlock:
         block = await response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_by_hash(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.bitcoin.block.with_streaming_response.get_by_hash(
@@ -419,7 +419,7 @@ class TestAsyncBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_by_hash(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `hash` but received ''"):
@@ -427,7 +427,7 @@ class TestAsyncBlock:
                 hash="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_by_height(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         block = await async_client.bitcoin.block.get_by_height(
@@ -435,7 +435,7 @@ class TestAsyncBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_by_height(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.bitcoin.block.with_raw_response.get_by_height(
@@ -447,7 +447,7 @@ class TestAsyncBlock:
         block = await response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_by_height(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.bitcoin.block.with_streaming_response.get_by_height(
@@ -461,7 +461,7 @@ class TestAsyncBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_header(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         block = await async_client.bitcoin.block.get_header(
@@ -469,7 +469,7 @@ class TestAsyncBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_header_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         block = await async_client.bitcoin.block.get_header(
@@ -478,7 +478,7 @@ class TestAsyncBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_header(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.bitcoin.block.with_raw_response.get_header(
@@ -490,7 +490,7 @@ class TestAsyncBlock:
         block = await response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_header(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.bitcoin.block.with_streaming_response.get_header(
@@ -504,7 +504,7 @@ class TestAsyncBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_header(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `hash` but received ''"):
@@ -512,7 +512,7 @@ class TestAsyncBlock:
                 hash="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_stats(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         block = await async_client.bitcoin.block.get_stats(
@@ -520,7 +520,7 @@ class TestAsyncBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_stats(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.bitcoin.block.with_raw_response.get_stats(
@@ -532,7 +532,7 @@ class TestAsyncBlock:
         block = await response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_stats(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.bitcoin.block.with_streaming_response.get_stats(
@@ -546,7 +546,7 @@ class TestAsyncBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_stats(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `hash` but received ''"):
@@ -554,13 +554,13 @@ class TestAsyncBlock:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_tip(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         block = await async_client.bitcoin.block.get_tip()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_tip(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.bitcoin.block.with_raw_response.get_tip()
@@ -570,7 +570,7 @@ class TestAsyncBlock:
         block = await response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_tip(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.bitcoin.block.with_streaming_response.get_tip() as response:
@@ -582,7 +582,7 @@ class TestAsyncBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_transaction_ids(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         block = await async_client.bitcoin.block.get_transaction_ids(
@@ -590,7 +590,7 @@ class TestAsyncBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_transaction_ids(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.bitcoin.block.with_raw_response.get_transaction_ids(
@@ -602,7 +602,7 @@ class TestAsyncBlock:
         block = await response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_transaction_ids(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.bitcoin.block.with_streaming_response.get_transaction_ids(
@@ -616,7 +616,7 @@ class TestAsyncBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_transaction_ids(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `hash` but received ''"):
@@ -624,7 +624,7 @@ class TestAsyncBlock:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_transactions(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         block = await async_client.bitcoin.block.get_transactions(
@@ -632,7 +632,7 @@ class TestAsyncBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_transactions_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         block = await async_client.bitcoin.block.get_transactions(
@@ -641,7 +641,7 @@ class TestAsyncBlock:
         )
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_transactions(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.bitcoin.block.with_raw_response.get_transactions(
@@ -653,7 +653,7 @@ class TestAsyncBlock:
         block = await response.parse()
         assert block is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_transactions(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.bitcoin.block.with_streaming_response.get_transactions(
@@ -667,7 +667,7 @@ class TestAsyncBlock:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_transactions(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `hash` but received ''"):
