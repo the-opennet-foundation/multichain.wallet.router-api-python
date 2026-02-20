@@ -15,7 +15,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestTx:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_by_hash(self, client: MultichainWalletRouterAPI) -> None:
         tx = client.evm.tx.get_by_hash(
@@ -24,7 +24,7 @@ class TestTx:
         )
         assert tx is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_by_hash(self, client: MultichainWalletRouterAPI) -> None:
         response = client.evm.tx.with_raw_response.get_by_hash(
@@ -37,7 +37,7 @@ class TestTx:
         tx = response.parse()
         assert tx is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_by_hash(self, client: MultichainWalletRouterAPI) -> None:
         with client.evm.tx.with_streaming_response.get_by_hash(
@@ -52,7 +52,7 @@ class TestTx:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_by_hash(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `tx_hash` but received ''"):
@@ -61,7 +61,7 @@ class TestTx:
                 chain_id="ethereum",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_send(self, client: MultichainWalletRouterAPI) -> None:
         tx = client.evm.tx.send(
@@ -69,7 +69,7 @@ class TestTx:
         )
         assert tx is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_send_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         tx = client.evm.tx.send(
@@ -78,7 +78,7 @@ class TestTx:
         )
         assert tx is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_send(self, client: MultichainWalletRouterAPI) -> None:
         response = client.evm.tx.with_raw_response.send(
@@ -90,7 +90,7 @@ class TestTx:
         tx = response.parse()
         assert tx is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_send(self, client: MultichainWalletRouterAPI) -> None:
         with client.evm.tx.with_streaming_response.send(
@@ -110,7 +110,7 @@ class TestAsyncTx:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_by_hash(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         tx = await async_client.evm.tx.get_by_hash(
@@ -119,7 +119,7 @@ class TestAsyncTx:
         )
         assert tx is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_by_hash(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.evm.tx.with_raw_response.get_by_hash(
@@ -132,7 +132,7 @@ class TestAsyncTx:
         tx = await response.parse()
         assert tx is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_by_hash(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.evm.tx.with_streaming_response.get_by_hash(
@@ -147,7 +147,7 @@ class TestAsyncTx:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_by_hash(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `tx_hash` but received ''"):
@@ -156,7 +156,7 @@ class TestAsyncTx:
                 chain_id="ethereum",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_send(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         tx = await async_client.evm.tx.send(
@@ -164,7 +164,7 @@ class TestAsyncTx:
         )
         assert tx is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_send_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         tx = await async_client.evm.tx.send(
@@ -173,7 +173,7 @@ class TestAsyncTx:
         )
         assert tx is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_send(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.evm.tx.with_raw_response.send(
@@ -185,7 +185,7 @@ class TestAsyncTx:
         tx = await response.parse()
         assert tx is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_send(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.evm.tx.with_streaming_response.send(

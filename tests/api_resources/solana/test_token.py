@@ -15,7 +15,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestToken:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_largest_accounts(self, client: MultichainWalletRouterAPI) -> None:
         token = client.solana.token.list_largest_accounts(
@@ -23,7 +23,7 @@ class TestToken:
         )
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list_largest_accounts(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.token.with_raw_response.list_largest_accounts(
@@ -35,7 +35,7 @@ class TestToken:
         token = response.parse()
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list_largest_accounts(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.token.with_streaming_response.list_largest_accounts(
@@ -49,7 +49,7 @@ class TestToken:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_list_largest_accounts(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `mint` but received ''"):
@@ -57,7 +57,7 @@ class TestToken:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_balance(self, client: MultichainWalletRouterAPI) -> None:
         token = client.solana.token.retrieve_balance(
@@ -65,7 +65,7 @@ class TestToken:
         )
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_balance(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.token.with_raw_response.retrieve_balance(
@@ -77,7 +77,7 @@ class TestToken:
         token = response.parse()
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_balance(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.token.with_streaming_response.retrieve_balance(
@@ -91,7 +91,7 @@ class TestToken:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve_balance(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `token_account` but received ''"):
@@ -99,7 +99,7 @@ class TestToken:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve_total_supply(self, client: MultichainWalletRouterAPI) -> None:
         token = client.solana.token.retrieve_total_supply(
@@ -107,7 +107,7 @@ class TestToken:
         )
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve_total_supply(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.token.with_raw_response.retrieve_total_supply(
@@ -119,7 +119,7 @@ class TestToken:
         token = response.parse()
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve_total_supply(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.token.with_streaming_response.retrieve_total_supply(
@@ -133,7 +133,7 @@ class TestToken:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve_total_supply(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `mint` but received ''"):
@@ -147,7 +147,7 @@ class TestAsyncToken:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_largest_accounts(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         token = await async_client.solana.token.list_largest_accounts(
@@ -155,7 +155,7 @@ class TestAsyncToken:
         )
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list_largest_accounts(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.token.with_raw_response.list_largest_accounts(
@@ -167,7 +167,7 @@ class TestAsyncToken:
         token = await response.parse()
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list_largest_accounts(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.token.with_streaming_response.list_largest_accounts(
@@ -181,7 +181,7 @@ class TestAsyncToken:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_list_largest_accounts(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `mint` but received ''"):
@@ -189,7 +189,7 @@ class TestAsyncToken:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_balance(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         token = await async_client.solana.token.retrieve_balance(
@@ -197,7 +197,7 @@ class TestAsyncToken:
         )
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_balance(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.token.with_raw_response.retrieve_balance(
@@ -209,7 +209,7 @@ class TestAsyncToken:
         token = await response.parse()
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_balance(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.token.with_streaming_response.retrieve_balance(
@@ -223,7 +223,7 @@ class TestAsyncToken:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve_balance(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `token_account` but received ''"):
@@ -231,7 +231,7 @@ class TestAsyncToken:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve_total_supply(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         token = await async_client.solana.token.retrieve_total_supply(
@@ -239,7 +239,7 @@ class TestAsyncToken:
         )
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve_total_supply(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.token.with_raw_response.retrieve_total_supply(
@@ -251,7 +251,7 @@ class TestAsyncToken:
         token = await response.parse()
         assert token is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve_total_supply(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.token.with_streaming_response.retrieve_total_supply(
@@ -265,7 +265,7 @@ class TestAsyncToken:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve_total_supply(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `mint` but received ''"):

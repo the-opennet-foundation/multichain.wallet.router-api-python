@@ -15,7 +15,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestAssets:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.retrieve(
@@ -23,7 +23,7 @@ class TestAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.assets.with_raw_response.retrieve(
@@ -35,7 +35,7 @@ class TestAssets:
         asset = response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.assets.with_streaming_response.retrieve(
@@ -49,7 +49,7 @@ class TestAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `asset_id` but received ''"):
@@ -57,13 +57,13 @@ class TestAssets:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_multiple_assets(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.create_multiple_assets()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_multiple_assets_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.create_multiple_assets(
@@ -71,7 +71,7 @@ class TestAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create_multiple_assets(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.assets.with_raw_response.create_multiple_assets()
@@ -81,7 +81,7 @@ class TestAssets:
         asset = response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create_multiple_assets(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.assets.with_streaming_response.create_multiple_assets() as response:
@@ -93,7 +93,7 @@ class TestAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_proof(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.get_proof(
@@ -101,7 +101,7 @@ class TestAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_proof(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.assets.with_raw_response.get_proof(
@@ -113,7 +113,7 @@ class TestAssets:
         asset = response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_proof(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.assets.with_streaming_response.get_proof(
@@ -127,7 +127,7 @@ class TestAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_proof(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `asset_id` but received ''"):
@@ -135,7 +135,7 @@ class TestAssets:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_signatures(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.get_signatures(
@@ -143,7 +143,7 @@ class TestAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_signatures_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.get_signatures(
@@ -153,7 +153,7 @@ class TestAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_signatures(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.assets.with_raw_response.get_signatures(
@@ -165,7 +165,7 @@ class TestAssets:
         asset = response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_signatures(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.assets.with_streaming_response.get_signatures(
@@ -179,7 +179,7 @@ class TestAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_signatures(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `asset_id` but received ''"):
@@ -187,7 +187,7 @@ class TestAssets:
                 asset_id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_assets_by_authority(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.list_assets_by_authority(
@@ -195,7 +195,7 @@ class TestAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_assets_by_authority_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.list_assets_by_authority(
@@ -205,7 +205,7 @@ class TestAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list_assets_by_authority(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.assets.with_raw_response.list_assets_by_authority(
@@ -217,7 +217,7 @@ class TestAssets:
         asset = response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list_assets_by_authority(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.assets.with_streaming_response.list_assets_by_authority(
@@ -231,7 +231,7 @@ class TestAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_list_assets_by_authority(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `authority` but received ''"):
@@ -239,7 +239,7 @@ class TestAssets:
                 authority="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_assets_by_creator(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.list_assets_by_creator(
@@ -247,7 +247,7 @@ class TestAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_assets_by_creator_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.list_assets_by_creator(
@@ -257,7 +257,7 @@ class TestAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list_assets_by_creator(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.assets.with_raw_response.list_assets_by_creator(
@@ -269,7 +269,7 @@ class TestAssets:
         asset = response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list_assets_by_creator(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.assets.with_streaming_response.list_assets_by_creator(
@@ -283,7 +283,7 @@ class TestAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_list_assets_by_creator(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `creator` but received ''"):
@@ -291,7 +291,7 @@ class TestAssets:
                 creator="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_assets_by_group(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.list_assets_by_group(
@@ -300,7 +300,7 @@ class TestAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_assets_by_group_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.list_assets_by_group(
@@ -311,7 +311,7 @@ class TestAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list_assets_by_group(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.assets.with_raw_response.list_assets_by_group(
@@ -324,7 +324,7 @@ class TestAssets:
         asset = response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list_assets_by_group(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.assets.with_streaming_response.list_assets_by_group(
@@ -339,7 +339,7 @@ class TestAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_list_assets_by_group(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `group_key` but received ''"):
@@ -354,7 +354,7 @@ class TestAssets:
                 group_key="collection",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_owned_assets(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.list_owned_assets(
@@ -362,7 +362,7 @@ class TestAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_owned_assets_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.list_owned_assets(
@@ -372,7 +372,7 @@ class TestAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list_owned_assets(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.assets.with_raw_response.list_owned_assets(
@@ -384,7 +384,7 @@ class TestAssets:
         asset = response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list_owned_assets(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.assets.with_streaming_response.list_owned_assets(
@@ -398,7 +398,7 @@ class TestAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_list_owned_assets(self, client: MultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `owner` but received ''"):
@@ -406,13 +406,13 @@ class TestAssets:
                 owner="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_search_assets(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.search_assets()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_search_assets_with_all_params(self, client: MultichainWalletRouterAPI) -> None:
         asset = client.solana.assets.search_assets(
@@ -431,7 +431,7 @@ class TestAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_search_assets(self, client: MultichainWalletRouterAPI) -> None:
         response = client.solana.assets.with_raw_response.search_assets()
@@ -441,7 +441,7 @@ class TestAssets:
         asset = response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_search_assets(self, client: MultichainWalletRouterAPI) -> None:
         with client.solana.assets.with_streaming_response.search_assets() as response:
@@ -459,7 +459,7 @@ class TestAsyncAssets:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         asset = await async_client.solana.assets.retrieve(
@@ -467,7 +467,7 @@ class TestAsyncAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.assets.with_raw_response.retrieve(
@@ -479,7 +479,7 @@ class TestAsyncAssets:
         asset = await response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.assets.with_streaming_response.retrieve(
@@ -493,7 +493,7 @@ class TestAsyncAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `asset_id` but received ''"):
@@ -501,13 +501,13 @@ class TestAsyncAssets:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_multiple_assets(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         asset = await async_client.solana.assets.create_multiple_assets()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_multiple_assets_with_all_params(
         self, async_client: AsyncMultichainWalletRouterAPI
@@ -517,7 +517,7 @@ class TestAsyncAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create_multiple_assets(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.assets.with_raw_response.create_multiple_assets()
@@ -527,7 +527,7 @@ class TestAsyncAssets:
         asset = await response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create_multiple_assets(
         self, async_client: AsyncMultichainWalletRouterAPI
@@ -541,7 +541,7 @@ class TestAsyncAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_proof(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         asset = await async_client.solana.assets.get_proof(
@@ -549,7 +549,7 @@ class TestAsyncAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_proof(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.assets.with_raw_response.get_proof(
@@ -561,7 +561,7 @@ class TestAsyncAssets:
         asset = await response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_proof(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.assets.with_streaming_response.get_proof(
@@ -575,7 +575,7 @@ class TestAsyncAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_proof(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `asset_id` but received ''"):
@@ -583,7 +583,7 @@ class TestAsyncAssets:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_signatures(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         asset = await async_client.solana.assets.get_signatures(
@@ -591,7 +591,7 @@ class TestAsyncAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_signatures_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         asset = await async_client.solana.assets.get_signatures(
@@ -601,7 +601,7 @@ class TestAsyncAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_signatures(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.assets.with_raw_response.get_signatures(
@@ -613,7 +613,7 @@ class TestAsyncAssets:
         asset = await response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_signatures(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.assets.with_streaming_response.get_signatures(
@@ -627,7 +627,7 @@ class TestAsyncAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_signatures(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `asset_id` but received ''"):
@@ -635,7 +635,7 @@ class TestAsyncAssets:
                 asset_id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_assets_by_authority(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         asset = await async_client.solana.assets.list_assets_by_authority(
@@ -643,7 +643,7 @@ class TestAsyncAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_assets_by_authority_with_all_params(
         self, async_client: AsyncMultichainWalletRouterAPI
@@ -655,7 +655,7 @@ class TestAsyncAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list_assets_by_authority(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.assets.with_raw_response.list_assets_by_authority(
@@ -667,7 +667,7 @@ class TestAsyncAssets:
         asset = await response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list_assets_by_authority(
         self, async_client: AsyncMultichainWalletRouterAPI
@@ -683,7 +683,7 @@ class TestAsyncAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_list_assets_by_authority(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `authority` but received ''"):
@@ -691,7 +691,7 @@ class TestAsyncAssets:
                 authority="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_assets_by_creator(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         asset = await async_client.solana.assets.list_assets_by_creator(
@@ -699,7 +699,7 @@ class TestAsyncAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_assets_by_creator_with_all_params(
         self, async_client: AsyncMultichainWalletRouterAPI
@@ -711,7 +711,7 @@ class TestAsyncAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list_assets_by_creator(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.assets.with_raw_response.list_assets_by_creator(
@@ -723,7 +723,7 @@ class TestAsyncAssets:
         asset = await response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list_assets_by_creator(
         self, async_client: AsyncMultichainWalletRouterAPI
@@ -739,7 +739,7 @@ class TestAsyncAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_list_assets_by_creator(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `creator` but received ''"):
@@ -747,7 +747,7 @@ class TestAsyncAssets:
                 creator="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_assets_by_group(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         asset = await async_client.solana.assets.list_assets_by_group(
@@ -756,7 +756,7 @@ class TestAsyncAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_assets_by_group_with_all_params(
         self, async_client: AsyncMultichainWalletRouterAPI
@@ -769,7 +769,7 @@ class TestAsyncAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list_assets_by_group(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.assets.with_raw_response.list_assets_by_group(
@@ -782,7 +782,7 @@ class TestAsyncAssets:
         asset = await response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list_assets_by_group(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.assets.with_streaming_response.list_assets_by_group(
@@ -797,7 +797,7 @@ class TestAsyncAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_list_assets_by_group(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `group_key` but received ''"):
@@ -812,7 +812,7 @@ class TestAsyncAssets:
                 group_key="collection",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_owned_assets(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         asset = await async_client.solana.assets.list_owned_assets(
@@ -820,7 +820,7 @@ class TestAsyncAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_owned_assets_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         asset = await async_client.solana.assets.list_owned_assets(
@@ -830,7 +830,7 @@ class TestAsyncAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list_owned_assets(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.assets.with_raw_response.list_owned_assets(
@@ -842,7 +842,7 @@ class TestAsyncAssets:
         asset = await response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list_owned_assets(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.assets.with_streaming_response.list_owned_assets(
@@ -856,7 +856,7 @@ class TestAsyncAssets:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_list_owned_assets(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `owner` but received ''"):
@@ -864,13 +864,13 @@ class TestAsyncAssets:
                 owner="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_search_assets(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         asset = await async_client.solana.assets.search_assets()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_search_assets_with_all_params(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         asset = await async_client.solana.assets.search_assets(
@@ -889,7 +889,7 @@ class TestAsyncAssets:
         )
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_search_assets(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         response = await async_client.solana.assets.with_raw_response.search_assets()
@@ -899,7 +899,7 @@ class TestAsyncAssets:
         asset = await response.parse()
         assert asset is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_search_assets(self, async_client: AsyncMultichainWalletRouterAPI) -> None:
         async with async_client.solana.assets.with_streaming_response.search_assets() as response:
